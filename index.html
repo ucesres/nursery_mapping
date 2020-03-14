@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Created by Ed Sharp ed.sharp@gmail.co.uk | 11/o3/2020 -->
+    <meta charset="utf-8" />
+    <!-- Mapbox javascript and css files -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- custom CSS     -->
+    <link href="css/custom.css" rel="stylesheet" />
+    <title>Exposure to Nitrogen Dioxide in London Nurseries</title>
+</head>
+<body>
+    <!--Password protect beta version <script src="js/password.js"></script> -->
+    <!-- Mapbox map for now override css, but can revert if siderbar is desired-->
+    <div id='map' class='mapboxmap'>
+        <!-- add meu to toggle layers-->
+        <div id='boxed_title' class='title_in_box'>
+            <h1>Nitrogen Dioxide (NO<sub>2</sub>) and Nurseries</h1>
+        </div>
+        <!-- Info box describing elements-->
+        <div id='information' class='info'>
+           <img src="data/Info-Button.png" height="42" width="42" />
+               <span class="tooltiptext">
+                 This map shows London nureseries relative to NO<sub>2</sub>
+                 concentrations in the air, from background sources and at the roadside.  <br />
+                <br />
+                The EU limit value for mean concentration of NO<sub>2</sub> is 40 &#181;g/m<sup>3</sup>.<br />
+               <br />
+                 For a full list of data sources and a description of the method used to derive
+                 distances see the <a href="https://github.com/ucesres/no2_nurseries"> github page.
+                </span>
+        </div>
+        <!-- code for map overlays -->
+        <script src="js/schools_map.js"></script>
+        <!-- add html elements to the legend !-->
+        <div id='road_legend' class='legend'>
+            <h4>Background <br />NO<sub>2</sub> concentration (&#181;g/m<sup>3</sup>)</h4>
+            <div><span style='background-color: #1b9e77'></span>0 - 30</div>
+            <div><span style='background-color: #d95f02'></span>30 - 40</div>
+            <div><span style='background-color: #7570b3'></span>40 - 50</div>
+            <div><span style='background-color: #e7298a'></span>50 - 60</div>
+            <div><span style='background-color: #1a1a1a'></span>60 - 130</div>
+        </div>
+    </div>
+</body>
+</html>
